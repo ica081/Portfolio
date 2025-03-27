@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
             cursorFollower.classList.remove('hover');
         });
     });
+
+    
     
     // Mobile Menu
     const menuToggle = document.querySelector('.cyber-menu-toggle');
@@ -267,18 +269,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('cyberForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+            // Você pode adicionar validações extras aqui se quiser
+            // Por exemplo, verificar se o e-mail é válido
             
-            // Simulate form submission
-            const name = this.querySelector('input[type="text"]').value;
-            const email = this.querySelector('input[type="email"]').value;
+            // Mostrar mensagem de carregamento
+            const submitBtn = this.querySelector('button[type="submit"]');
+            submitBtn.innerHTML = 'Sending...';
+            submitBtn.disabled = true;
             
-            alert(`Thank you, ${name}! Your message has been sent successfully. I'll contact you at ${email} soon.`);
-            
-            // Clear form
-            this.reset();
+            // O FormSubmit cuidará do resto automaticamente
         });
     }
+
+    
     
     // Update year in footer
     document.getElementById('cyber-year').textContent = new Date().getFullYear();
