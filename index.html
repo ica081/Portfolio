@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ícaro Novais | Tech Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="cyber-nav">
+        <div class="container">
+            <!--<a href="#" class="cyber-logo">{"<Dev/>"}</a>-->
+            <ul class="nav-links">
+                <li><a href="#home" data-hover="Home">Home</a></li>
+                <li><a href="#about" data-hover="About">About</a></li>
+                <li><a href="#skills" data-hover="Skills">Skills</a></li>
+                <li><a href="#portfolio" data-hover="Portfolio">Portfolio</a></li>
+                <li><a href="#contact" data-hover="Contact">Contact</a></li>
+            </ul>
+            <div class="cyber-menu-toggle">
+                <div class="cyber-burger"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="cyber-hero">
+        <div class="cyber-grid-lines">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="container">
+            <div class="cyber-hero-content">
+                <h1 class="cyber-glitch" data-text="Ícaro Novais">Ícaro Novais</h1>
+                <h2 class="cyber-subtitle">
+                    <span class="cyber-typed"></span>
+                    <span class="cyber-cursor">|</span>
+                </h2>
+                <p class="cyber-desc">Full Stack Developer specializing in high-performance solutions and innovative design.</p>
+                <div class="cyber-buttons">
+                    <a href="#contact" class="cyber-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Contact Me
+                    </a>
+                    <a href="#portfolio" class="cyber-btn cyber-btn-secondary">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        My Projects
+                    </a>
+                </div>
+            </div>
+            <div class="cyber-hero-image">
+                <div class="cyber-hexagon">
+                    <div class="cyber-hexagon-inner">
+                        <img src="Perfilfoto.webp" alt="Face Photo">
+                    </div>
+                </div>
+                <div class="cyber-particles" id="particles-js"></div>
+            </div>
+        </div>
+        <div class="cyber-scroll-down">
+            <span>Scroll Down</span>
+            <div class="cyber-mouse">
+                <div class="cyber-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="cyber-about">
+        <div class="cyber-section-header">
+            <h2 class="cyber-section-title">ABOUT <span>ME</span></h2>
+            <div class="cyber-section-subtitle">Get to know the professional behind the code</div>
+        </div>
+        <div class="container">
+            <div class="cyber-about-content">
+                <div class="cyber-about-image">
+                    <div class="cyber-code-box">
+                        <div class="cyber-code-header">
+                            <span class="red"></span>
+                            <span class="yellow"></span>
+                            <span class="green"></span>
+                        </div>
+                        <pre class="cyber-code">
+                            <code>
+<span class="keyword">const</span> dev = {
+    name: <span class="string">"Ícaro Novais"</span>,
+    title: <span class="string">"Full Stack Developer"</span>,
+    experience: <span class="number">1</span>+<span class="string">" year"</span>,
+    skills: [
+        <span class="string">"JavaScript"</span>,
+        <span class="string">"React"</span>,
+        <span class="string">"Node.js"</span>,
+        <span class="string">"UI/UX Design"</span>
+    ],
+    location: <span class="string">"Barro-Alto, Brazil"</span>
+};</code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="cyber-about-text">
+                    <h3>Who I am</h3>
+                    <p>Passionate developer with experience in creating innovative digital solutions. My approach combines advanced technical knowledge with intuitive design to deliver exceptional products.</p>
+                    <div class="cyber-info-list">
+                        <div class="cyber-info-item">
+                            <span>Name:</span>
+                            <span>Ícaro Novais</span>
+                        </div>
+                        <div class="cyber-info-item">
+                            <span>Email:</span>
+                            <span>icaro.sousa.090201@gmail.com</span>
+                        </div>
+                        <div class="cyber-info-item">
+                            <span>Age:</span>
+                            <span>28</span>
+                        </div>
+                        <div class="cyber-info-item">
+                            <span>From:</span>
+                            <span>Barro-Alto, Brazil</span>
+                        </div>
+                    </div>
+                    <div class="cyber-social-links">
+                        <a href="#" class="cyber-social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="cyber-social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="cyber-social-icon"><i class="fab fa-codepen"></i></a>
+                        <a href="#" class="cyber-social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="cyber-skills">
+        <div class="cyber-section-header">
+            <h2 class="cyber-section-title">MY <span>SKILLS</span></h2>
+            <div class="cyber-section-subtitle">Technologies I master</div>
+        </div>
+        <div class="container">
+            <div class="cyber-skills-grid">
+                <div class="cyber-skill-card">
+                    <div class="cyber-skill-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <div class="cyber-skill-bar">
+                        <div class="cyber-skill-progress" style="width: 90%"></div>
+                        <span>90%</span>
+                    </div>
+                </div>
+                <div class="cyber-skill-card">
+                    <div class="cyber-skill-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3>React</h3>
+                    <div class="cyber-skill-bar">
+                        <div class="cyber-skill-progress" style="width: 85%"></div>
+                        <span>85%</span>
+                    </div>
+                </div>
+                <div class="cyber-skill-card">
+                    <div class="cyber-skill-icon">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <h3>Node.js</h3>
+                    <div class="cyber-skill-bar">
+                        <div class="cyber-skill-progress" style="width: 80%"></div>
+                        <span>80%</span>
+                    </div>
+                </div>
+                <div class="cyber-skill-card">
+                    <div class="cyber-skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>MongoDB</h3>
+                    <div class="cyber-skill-bar">
+                        <div class="cyber-skill-progress" style="width: 75%"></div>
+                        <span>75%</span>
+                    </div>
+                </div>
+                <div class="cyber-skill-card">
+                    <div class="cyber-skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <div class="cyber-skill-bar">
+                        <div class="cyber-skill-progress" style="width: 70%"></div>
+                        <span>70%</span>
+                    </div>
+                </div>
+                <div class="cyber-skill-card">
+                    <div class="cyber-skill-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h3>AWS</h3>
+                    <div class="cyber-skill-bar">
+                        <div class="cyber-skill-progress" style="width: 65%"></div>
+                        <span>65%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="cyber-portfolio">
+        <div class="cyber-section-header">
+            <h2 class="cyber-section-title">MY <span>PORTFOLIO</span></h2>
+            <div class="cyber-section-subtitle">Recent works</div>
+        </div>
+        <div class="container">
+            <div class="cyber-portfolio-filter">
+                <button class="cyber-filter-btn active" data-filter="all">All</button>
+                <button class="cyber-filter-btn" data-filter="web">Web</button>
+                <button class="cyber-filter-btn" data-filter="app">Apps</button>
+                <button class="cyber-filter-btn" data-filter="design">Design</button>
+            </div>
+            <div class="cyber-portfolio-grid">
+                <div class="cyber-portfolio-item" data-category="web">
+                    <div class="cyber-portfolio-img">
+                        <img src="images/project1.jpg" alt="Project 1">
+                        <div class="cyber-portfolio-overlay">
+                            <h3>E-commerce Platform</h3>
+                            <p>React, Node.js, MongoDB</p>
+                            <a href="#" class="cyber-portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cyber-portfolio-item" data-category="app">
+                    <div class="cyber-portfolio-img">
+                        <img src="images/project2.jpg" alt="Project 2">
+                        <div class="cyber-portfolio-overlay">
+                            <h3>Mobile App</h3>
+                            <p>React Native, Firebase</p>
+                            <a href="#" class="cyber-portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cyber-portfolio-item" data-category="design">
+                    <div class="cyber-portfolio-img">
+                        <img src="images/project3.jpg" alt="Project 3">
+                        <div class="cyber-portfolio-overlay">
+                            <h3>UI/UX Design</h3>
+                            <p>Figma, Adobe XD</p>
+                            <a href="#" class="cyber-portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cyber-portfolio-item" data-category="web">
+                    <div class="cyber-portfolio-img">
+                        <img src="images/project4.jpg" alt="Project 4">
+                        <div class="cyber-portfolio-overlay">
+                            <h3>Analytics Dashboard</h3>
+                            <p>Vue.js, D3.js</p>
+                            <a href="#" class="cyber-portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cyber-portfolio-item" data-category="app">
+                    <div class="cyber-portfolio-img">
+                        <img src="images/project5.jpg" alt="Project 5">
+                        <div class="cyber-portfolio-overlay">
+                            <h3>Mobile Game</h3>
+                            <p>Unity, C#</p>
+                            <a href="#" class="cyber-portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cyber-portfolio-item" data-category="design">
+                    <div class="cyber-portfolio-img">
+                        <img src="images/project6.jpg" alt="Project 6">
+                        <div class="cyber-portfolio-overlay">
+                            <h3>Brand Identity</h3>
+                            <p>Branding, Illustration</p>
+                            <a href="#" class="cyber-portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="cyber-contact">
+        <div class="cyber-section-header">
+            <h2 class="cyber-section-title">CONTACT <span>ME</span></h2>
+            <div class="cyber-section-subtitle">Let's work together</div>
+        </div>
+        <div class="container">
+            <div class="cyber-contact-content">
+                <div class="cyber-contact-info">
+                    <h3>Let's talk!</h3>
+                    <p>Interested in working with me or just want to chat about tech? Send me a message!</p>
+                    <div class="cyber-info-box">
+                        <div class="cyber-info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <span>icaro.sousa.090201@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="cyber-info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <span>+55 (74) 98831-6054</span>
+                            </div>
+                        </div>
+                        <div class="cyber-info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <span>Barro-Alto, Brazil</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cyber-social-links">
+                        <a href="#" class="cyber-social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="cyber-social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="cyber-social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="cyber-social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="cyber-contact-form">
+                    <form id="cyberForm">
+                        <div class="cyber-form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="cyber-form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="cyber-form-group">
+                            <input type="text" placeholder="Subject">
+                        </div>
+                        <div class="cyber-form-group">
+                            <textarea placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="cyber-btn cyber-submit-btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="cyber-footer">
+        <div class="container">
+            <div class="cyber-footer-content">
+                <div class="cyber-footer-logo">{"<Dev/>"}</div>
+                <div class="cyber-footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="cyber-footer-copy">
+                    &copy; <span id="cyber-year"></span> Ícaro Novais. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
