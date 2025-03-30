@@ -663,6 +663,25 @@ section {
 }
 
 /* Skills */
+
+.skills-category {
+    margin-bottom: 50px;
+}
+
+.skills-category-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--primary);
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skills-category-title i {
+    font-size: 1.2rem;
+}
+
 .cyber-skills {
     background-color: var(--darker);
 }
@@ -670,7 +689,7 @@ section {
 .cyber-skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-    gap: 30px;
+    gap: 10px;
 }
 
 .cyber-skill-card {

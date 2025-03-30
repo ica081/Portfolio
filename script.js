@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Typed.js - Typing effect
     if (document.querySelector('.cyber-typed')) {
         const typed = new Typed('.cyber-typed', {
-            strings: ['Full Stack Developer', 'JavaScript Specialist', 'Creative Freelancer'],
+            strings: ['Full Stack Developer', 'JavaScript Specialist', 'Creative Freelancer', 'UI/UX'],
             typeSpeed: 50,
             backSpeed: 30,
             loop: true,
