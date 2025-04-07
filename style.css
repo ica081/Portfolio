@@ -70,7 +70,11 @@ section {
     transition: transform 0.4s ease, width 0.3s ease, height 0.3s ease;
 }
 
-
+.cursor.hover, .cursor-follower.hover {
+    transform: translate(-50%, -50%) scale(1.5);
+    background-color: var(--primary);
+    opacity: 0.5;
+}
 
 /* Manter o cabeçalho como está */
 .cyber-nav {
@@ -79,14 +83,12 @@ section {
     left: 0;
     width: 100%;
     padding: 20px 0;
-    z-index: 2000; /* Alto o suficiente para ficar acima de tudo */
+    z-index: 2000;
     background-color: rgba(10, 10, 10, 0.8);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 240, 255, 0.1);
     transition: var(--transition);
 }
-
-
 
 .cyber-nav.scrolled {
     padding: 15px 0;
@@ -194,18 +196,9 @@ section {
 
 /* Hero Section */
 .cyber-hero {
-    /*
-    height: 100vh;
-    display: flex;
-    align-items: center;
     position: relative;
-    overflow: hidden;
-    */
-    position: relative;
-    z-index: 1; /* Menor que o z-index do cabeçalho */
+    z-index: 1;
 }
-
-
 
 .cyber-grid-lines {
     position: absolute;
@@ -239,7 +232,7 @@ section {
     line-height: 1;
     text-transform: uppercase;
     position: relative;
-    z-index: 1; /* Menor que o cabeçalho */
+    z-index: 1;
 }
 
 .cyber-glitch::before,
@@ -662,7 +655,10 @@ section {
     transform: translateY(-5px);
 }
 
-/* Skills */
+/* Skills Carousel */
+.cyber-skills {
+    background-color: var(--darker);
+}
 
 .skills-category {
     margin-bottom: 50px;
@@ -682,17 +678,38 @@ section {
     font-size: 1.2rem;
 }
 
-.cyber-skills {
-    background-color: var(--darker);
+.cyber-skills-container {
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--darker);
+}
+
+.cyber-skills-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.cyber-skills-container::-webkit-scrollbar-track {
+    background: var(--darker);
+    border-radius: 10px;
+}
+
+.cyber-skills-container::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 10px;
 }
 
 .cyber-skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-    gap: 10px;
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    width: max-content;
+    min-width: 100%;
 }
 
 .cyber-skill-card {
+    min-width: 400px;
+    flex: 0 0 auto;
     background-color: var(--dark);
     padding: 30px;
     border-radius: 5px;
@@ -760,7 +777,7 @@ section {
     color: var(--primary);
 }
 
-/* Portfólio */
+/* Portfolio Carousel */
 .cyber-portfolio-filter {
     display: flex;
     justify-content: center;
@@ -788,13 +805,38 @@ section {
     box-shadow: var(--neon-shadow);
 }
 
+.cyber-portfolio-container {
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--darker);
+}
+
+.cyber-portfolio-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.cyber-portfolio-container::-webkit-scrollbar-track {
+    background: var(--darker);
+    border-radius: 10px;
+}
+
+.cyber-portfolio-container::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 10px;
+}
+
 .cyber-portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    display: flex;
     gap: 30px;
+    padding: 10px;
+    width: max-content;
+    min-width: 100%;
 }
 
 .cyber-portfolio-item {
+    min-width: 350px;
+    flex: 0 0 auto;
     position: relative;
     border-radius: 5px;
     overflow: hidden;
@@ -805,7 +847,6 @@ section {
     width: 100%;
     height: 100%;
     position: relative;
-    
 }
 
 .cyber-portfolio-img img {
@@ -813,7 +854,6 @@ section {
     height: 100%;
     object-fit: cover;
     transition: var(--transition);
-    
 }
 
 .cyber-portfolio-overlay {
@@ -856,6 +896,47 @@ section {
     color: var(--dark);
     font-size: 1.2rem;
     align-self: flex-end;
+}
+
+/* Botões de navegação do carrossel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: var(--darker);
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+    opacity: 0.7;
+}
+
+.carousel-btn:hover {
+    opacity: 1;
+    background-color: var(--primary);
+    color: var(--dark);
+    box-shadow: var(--neon-shadow);
+}
+
+.carousel-prev {
+    left: -20px;
+}
+
+.carousel-next {
+    right: -20px;
+}
+
+@media (max-width: 768px) {
+    .carousel-btn {
+        display: none;
+    }
 }
 
 /* Contato */
@@ -1084,8 +1165,12 @@ section {
         font-size: 2.5rem;
     }
 
-    .cyber-portfolio-grid {
-        grid-template-columns: 1fr;
+    .cyber-skill-card {
+        min-width: 220px;
+    }
+    
+    .cyber-portfolio-item {
+        min-width: 300px;
     }
 
     .cyber-footer-links {
@@ -1132,5 +1217,13 @@ section {
 
     .cyber-contact-form {
         padding: 30px 20px;
+    }
+
+    .cyber-skill-card {
+        min-width: 200px;
+    }
+    
+    .cyber-portfolio-item {
+        min-width: 280px;
     }
 }

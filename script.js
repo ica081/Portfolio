@@ -28,8 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    
-    
     // Mobile Menu
     const menuToggle = document.querySelector('.cyber-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -221,6 +219,85 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Carrossel de Habilidades e Portfólio
+    function setupCarousels() {
+        const skillContainers = document.querySelectorAll('.cyber-skills-container');
+        const portfolioContainer = document.querySelector('.cyber-portfolio-container');
+        
+        // Adiciona navegação por arrasto
+        function setupDragScroll(container) {
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+            
+            container.addEventListener('mousedown', (e) => {
+                isDown = true;
+                container.classList.add('active');
+                startX = e.pageX - container.offsetLeft;
+                scrollLeft = container.scrollLeft;
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                isDown = false;
+                container.classList.remove('active');
+            });
+            
+            container.addEventListener('mouseup', () => {
+                isDown = false;
+                container.classList.remove('active');
+            });
+            
+            container.addEventListener('mousemove', (e) => {
+                if(!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - container.offsetLeft;
+                const walk = (x - startX) * 2;
+                container.scrollLeft = scrollLeft - walk;
+            });
+        }
+        
+        skillContainers.forEach(container => {
+            setupDragScroll(container);
+        });
+        
+        if(portfolioContainer) {
+            setupDragScroll(portfolioContainer);
+        }
+        
+        // Adiciona botões de navegação opcionais
+        function addNavigationButtons() {
+            const containers = [...skillContainers];
+            if(portfolioContainer) containers.push(portfolioContainer);
+            
+            containers.forEach(container => {
+                const prevBtn = document.createElement('button');
+                prevBtn.className = 'carousel-btn carousel-prev';
+                prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+                
+                const nextBtn = document.createElement('button');
+                nextBtn.className = 'carousel-btn carousel-next';
+                nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+                
+                container.parentNode.insertBefore(prevBtn, container);
+                container.parentNode.appendChild(nextBtn);
+                
+                prevBtn.addEventListener('click', () => {
+                    container.scrollBy({ left: -300, behavior: 'smooth' });
+                });
+                
+                nextBtn.addEventListener('click', () => {
+                    container.scrollBy({ left: 300, behavior: 'smooth' });
+                });
+            });
+        }
+        
+        // Descomente se quiser botões de navegação
+        // addNavigationButtons();
+    }
+    
+    // Inicializa os carrosséis
+    setupCarousels();
+    
     // Animate skill bars
     const animateSkills = function() {
         const skillBars = document.querySelectorAll('.cyber-skill-progress');
@@ -266,22 +343,15 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', animateOnScroll);
     
     // Contact form
-    const contactForm = document.getElementById('cyberForm');
+    const contactForm = document.querySelector('form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            // Você pode adicionar validações extras aqui se quiser
-            // Por exemplo, verificar se o e-mail é válido
-            
             // Mostrar mensagem de carregamento
             const submitBtn = this.querySelector('button[type="submit"]');
             submitBtn.innerHTML = 'Sending...';
             submitBtn.disabled = true;
-            
-            // O FormSubmit cuidará do resto automaticamente
         });
     }
-
-    
     
     // Update year in footer
     document.getElementById('cyber-year').textContent = new Date().getFullYear();
