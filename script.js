@@ -389,3 +389,48 @@ if (isMobile()) {
         item.style.minWidth = '100%';
     });
 }
+
+// Função para corrigir completamente a responsividade
+function fixMobileLayout() {
+    const isMobile = window.innerWidth <= 768;
+    
+    // Elementos que precisam de ajuste
+    const portfolioGrid = document.querySelector('.cyber-portfolio-grid');
+    const skillsGrid = document.querySelector('.cyber-skills-grid');
+    
+    if (isMobile) {
+        // Forçar layout de grid em uma coluna
+        if (portfolioGrid) {
+            portfolioGrid.style.display = 'grid';
+            portfolioGrid.style.gridTemplateColumns = '1fr';
+            portfolioGrid.style.overflow = 'visible';
+        }
+        
+        if (skillsGrid) {
+            skillsGrid.style.display = 'grid';
+            skillsGrid.style.gridTemplateColumns = '1fr';
+            skillsGrid.style.overflow = 'visible';
+        }
+        
+        // Remover qualquer largura mínima
+        document.querySelectorAll('.cyber-portfolio-item, .cyber-skill-card').forEach(item => {
+            item.style.minWidth = '100%';
+            item.style.width = '100%';
+        });
+    } else {
+        // Restaurar layout original em desktop
+        if (portfolioGrid) {
+            portfolioGrid.style.display = 'flex';
+            portfolioGrid.style.overflowX = 'auto';
+        }
+        
+        if (skillsGrid) {
+            skillsGrid.style.display = 'flex';
+            skillsGrid.style.overflowX = 'auto';
+        }
+    }
+}
+
+// Executar ao carregar e redimensionar
+window.addEventListener('load', fixMobileLayout);
+window.addEventListener('resize', fixMobileLayout);
