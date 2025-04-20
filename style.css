@@ -1133,9 +1133,19 @@ section {
     }
 }
 
+
+
 @media (max-width: 768px) {
     .cyber-menu-toggle {
         display: block;
+    }
+
+    .cursor, .cursor-follower {
+        display: none !important;
+    }
+    
+    body {
+        cursor: default !important;
     }
 
     .nav-links {
@@ -1227,3 +1237,4 @@ section {
         min-width: 280px;
     }
 }
+

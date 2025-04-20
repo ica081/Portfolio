@@ -356,3 +356,36 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update year in footer
     document.getElementById('cyber-year').textContent = new Date().getFullYear();
 });
+
+// Verificar se é mobile
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+// Desativar efeitos em mobile
+if (isMobile()) {
+    // Remover cursor
+    const cursor = document.querySelector('.cursor');
+    const cursorFollower = document.querySelector('.cursor-follower');
+    if (cursor && cursorFollower) {
+        cursor.remove();
+        cursorFollower.remove();
+    }
+    
+    // Ajustar containers
+    document.querySelectorAll('.cyber-skills-container, .cyber-portfolio-container').forEach(container => {
+        container.style.overflowX = 'hidden';
+        container.style.flexWrap = 'wrap';
+    });
+    
+    // Ajustar grids
+    document.querySelectorAll('.cyber-skills-grid, .cyber-portfolio-grid').forEach(grid => {
+        grid.style.flexWrap = 'wrap';
+        grid.style.width = '100%';
+    });
+    
+    // Ajustar itens
+    document.querySelectorAll('.cyber-skill-card, .cyber-portfolio-item').forEach(item => {
+        item.style.minWidth = '100%';
+    });
+}
